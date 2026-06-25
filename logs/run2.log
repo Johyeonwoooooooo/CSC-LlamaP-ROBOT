@@ -1,0 +1,6 @@
+=== 기본 방 렌더링: FloorPlan1 ===
+[저장] 2_firstperson.png  shape=(700, 900, 3)
+[저장] 2_topdown.png  shape=(700, 900, 3)
+[정보] 이 방의 물체 수: 77
+[정보] 예시 물체: ['Apple', 'Book', 'Bottle', 'Bowl', 'Bread', 'ButterKnife', 'Cabinet', 'Cabinet', 'Cabinet', 'Cabinet', 'Cabinet', 'Cabinet']
+[종료] controller.stop()

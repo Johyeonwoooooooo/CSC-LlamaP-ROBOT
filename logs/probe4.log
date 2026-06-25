@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/gamzadole/ai2thor-test/probe4.py", line 17, in <module>
+    r = c.step(action="GetHouseFromTemplate", template=tmpl(), outsideBoundaryId=ob)
+  File "/home/gamzadole/ai2thor-test/.venv/lib/python3.10/site-packages/ai2thor/controller.py", line 1009, in step
+    raise ValueError(self.last_event.metadata["errorMessage"])
+ValueError: 
+	Action: "GetHouseFromTemplate" called with invalid argument: 'outsideBoundaryId'
+	Expected arguments: HouseTemplate template
+	Your arguments: 'template', 'outsideBoundaryId'
+	Valid ways to call "GetHouseFromTemplate" action:
+		Void GetHouseFromTemplate(HouseTemplate template)

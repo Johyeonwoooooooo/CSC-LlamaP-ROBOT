@@ -1,0 +1,10 @@
+=== 커스텀 방 만들기 (4.0m x 4.0m, 높이 2.5m) ===
+[CreateHouse] success=False err=Exception creating house.
+'The given key was not present in the dictionary.'
+''
+[SpawnAsset] 'Bed_7' 배치 성공
+[저장] 4_custom_firstperson.png
+[저장] 4_custom_topdown.png
+
+완료: 4_custom_firstperson.png / 4_custom_topdown.png 확인하세요.
+[종료] controller.stop()

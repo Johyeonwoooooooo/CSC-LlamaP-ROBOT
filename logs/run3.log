@@ -1,0 +1,16 @@
+[저장] 3_0_before.png
+  [냉장고 열기] Fridge|-02.10|+00.00|+01.07  open=True on=False pos={'x': -2.0969998836517334, 'y': 0.0, 'z': 1.0720000267028809}
+  [전등 스위치 켜기] LightSwitch|+02.33|+01.31|-00.16  open=False on=True pos={'x': 2.3299999237060547, 'y': 1.309000015258789, 'z': -0.1599999964237213}
+[저장] 3_A_state_switched.png
+  [이동 전] Toaster|-01.84|+00.90|+00.13  open=False on=False pos={'x': -1.8350030183792114, 'y': 0.9000004529953003, 'z': 0.1340002566576004}
+  [이동 후] Toaster|-01.84|+00.90|+00.13  open=False on=False pos={'x': -1.589858889579773, 'y': 0.900000810623169, 'z': 0.28341734409332275}
+[저장] 3_B_moved.png
+  [제거] CounterTop|+00.69|+00.95|-02.48 를 장면에서 뺐습니다.
+[저장] 3_C_removed.png
+  [재배치] InitialRandomSpawn 으로 물체들을 새로 배치했습니다.
+[저장] 3_D_respawned.png
+[저장] 3_E_other_room.png
+  [스위칭] FloorPlan1(주방) -> FloorPlan201(거실) 로 방 자체를 교체했습니다.
+
+완료: 3_0_before.png ~ 3_E_other_room.png 를 순서대로 비교해보세요.
+[종료] controller.stop()

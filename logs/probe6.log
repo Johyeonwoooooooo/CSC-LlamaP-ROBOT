@@ -1,0 +1,11 @@
+[GetMaterials] ok=True ret=dict keys=['AlarmClockMaterials', 'AppleMaterials', 'BasketballMaterials', 'BowlMaterials', 'GarbageBinMaterials', 'HousePlantMaterials', 'PillowMaterials', 'SprayBottleMaterials']
+[GetMaterialProperties] EXC Invalid action: GetMaterialProperties
+[GetAssetDatabase] ok=True ret=dict keys=['Sink_1', 'Sink_2', 'Sink_3', 'Sink_4', 'Sink_5', 'Sink_6', 'Sink_7', 'Sink_8']
+[GetRuntimeAssets] EXC Invalid action: GetRuntimeAssets
+[GetAssetMetadata] EXC Invalid action: GetAssetMetadata
+[GetAvailableMaterials] EXC Invalid action: GetAvailableMaterials
+[GetSceneBounds] ok=True ret=list[2] sample=[{'x': -0.7166166305541992, 'y': -20.167999267578125, 'z': 0.15462073683738708}, {'x': -0.10945576429367065, 'y': -18.71192169189453, 'z': 0.7066092491149902}]
+[CreateHouse color-material] ok= False Exception creating house.
+'Value cannot be null.
+Parameter name: key'
+''

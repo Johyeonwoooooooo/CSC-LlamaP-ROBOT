@@ -1,0 +1,11 @@
+전체 카테고리: ['AlarmClockMaterials', 'AppleMaterials', 'BasketballMaterials', 'BowlMaterials', 'GarbageBinMaterials', 'HousePlantMaterials', 'PillowMaterials', 'SprayBottleMaterials', 'BoxMaterials', 'CellPhoneMaterials', 'CupMaterials', 'FloorLampMaterials', 'PenPencilMaterials', 'PlateMaterials', 'PotMaterials', 'StatueMaterials', 'WatchMaterials', 'ArmChairMaterials', 'BedMaterials', 'BedsheetMaterials', 'ChairMaterials', 'CoffeeTableMaterials', 'DeskMaterials', 'DiningTableMaterials', 'DresserMaterials', 'OfficeChairMaterials', 'ShelvingUnitMaterials', 'SideTableMaterials', 'SofaMaterials', 'FabricMaterials', 'GlassMaterials', 'MetalMaterials', 'PlasticMaterials', 'WoodMaterials', 'WallMaterials', 'FridgeMaterials', 'PaperMaterials', 'GrungeMaterials', 'WaxMaterials', 'SoapMaterials', 'MicrowaveMaterials', 'ToasterMaterials', 'LettuceMaterials', 'SoapBottleMaterials', 'PotatoMaterials', 'PotatoCookedMaterials', 'PotatoSlicedMaterials', 'LaptopMaterials', 'BreadMaterials', 'PanMaterials', 'PanDecalMaterials', 'CoffeeMachineMaterials']
+
+[FloorLampMaterials] (22개) -> ['Floor_Lamp_Primary1_Mat', 'Floor_Lamp_Primary2_Mat', 'Floor_Lamp_Primary3_Mat', 'Floor_Lamp_Primary4_Mat', 'Floor_Lamp_Primary5_Mat', 'Floor_Lamp_Secondary1_Mat', 'Floor_Lamp_Secondary2_Mat', 'Floor_Lamp_Secondary3_Mat', 'Floor_Lamp_Secondary4_Mat', 'Floor_Lamp_Secondary5_Mat', 'Floor_Lamp_Shade1_Mat', 'Floor_Lamp_Shade2_Mat']
+
+[FabricMaterials] (58개) -> ['BedroomCarpet', 'BlackFabirc', 'Carpet1', 'Carpet1Lit', 'Carpet2', 'Carpet3', 'Carpet4', 'Carpet5', 'Carpet6', 'Carpet7', 'Carpet8', 'Carpet8TILED']
+
+[MetalMaterials] (166개) -> ['METAL bathtubTaps', 'BlackMetal', 'Metal ChairsTables_Kitchen', 'Metal_chairs_tables', 'Metal Clock', 'Metal_clock', 'Metal Clutter', 'Metal_clutter', 'CoffeeMachineMetalMat', 'Metal Kettle', 'Metal_kettle', 'MetalMat Keychains']
+
+[WoodMaterials] (58개) -> ['BedroomFloor1', 'BlackWood', 'Cream_wood', 'DarkWood2', 'DarkWoodFloors', 'DarkWoodPlanks', 'DarkWoodSmooth', 'DarkWoodSmooth2', 'GreenWood', 'GreyFloor 1', 'GreyFloor 2', 'GreyFloor 3']
+
+[WallMaterials] (122개) -> ['bathroomTilesBlue', 'bathroomTilesGreen1', 'bathroomTilesGrey 1', 'bathroomTilesGrey 2', 'bathroomTilesGrey', 'bathroomTilesTan', 'bathroomTilesTan2', 'bathroomTilesTan3', 'bathroomTilesTan4', 'bathroomTilesTan5', 'bathroomTilesTan6', 'BrickSmallNew0073_4_S']

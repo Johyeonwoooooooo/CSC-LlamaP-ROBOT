@@ -1,0 +1,6 @@
+[A.lights_empty] success=False err='Exception creating house.'
+[B.directional] success=False err='Exception creating house.'
+[C.walls_empty] success=False err='Exception creating house.'
+[D.livingroom] success=False err='Exception creating house.'
+[E.no_metadata] success=False err='Exception creating house.'
+[F.dir+id_underscore] success=False err='Exception creating house.'
