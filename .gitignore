@@ -24,6 +24,10 @@ LaMMA-P/data/aithor_connect/agent_*/
 LaMMA-P/data/aithor_connect/top_view/
 LaMMA-P/data/aithor_connect/*.mp4
 LaMMA-P/plan_to_code_results/
+# 실행 프레임/영상(대용량, 재생성 가능) — logs 의 플랜/코드 파일은 유지
+LaMMA-P/logs/**/agent_*/
+LaMMA-P/logs/**/top_view/
+**/*.mp4
 **/*.bak
 
 # ===== OS =====

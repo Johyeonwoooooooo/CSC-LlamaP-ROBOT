@@ -1,0 +1,29 @@
+import threading
+import time
+
+def task_function(robots):
+    # Task description: Throw the Spatula in the trash
+
+    # 0: Task: Locate and pick up the Spatula
+    # 1: Go to the Spatula's location.
+    GoToObject(robots[0], 'spatula_location')
+    # 2: Pick up the Spatula.
+    PickupObject(robots[0], 'spatula')
+
+    # 3: Move to the Trash Can's location.
+    GoToObject(robots[0], 'garbagecan_location')
+
+    # 4: Dispose of the Spatula in the Trash Can.
+    PutObject(robots[0], 'spatula', 'garbagecan')
+
+# Threading setup
+robots = []  # Assuming robots list is initialized elsewhere with robot instances
+task1_thread = threading.Thread(target=task_function, args=(robots,))
+task1_thread.start()
+task1_thread.join()
+
+# Action queue and completion
+action_queue = []  # Assuming action_queue is initialized elsewhere
+action_queue.append({'action': 'Done'})
+task_over = True
+time.sleep(5)

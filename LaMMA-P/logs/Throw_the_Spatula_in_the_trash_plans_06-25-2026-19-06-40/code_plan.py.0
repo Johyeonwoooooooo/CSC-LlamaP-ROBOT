@@ -1,0 +1,42 @@
+To generate the problem file for the given domain and task of locating and picking up a spatula, we need to follow these steps:
+
+Step 1: Identify Objects and Initial State
+
+Objects Involved:
+- Robots: robot2
+- Object: spatula
+- Initial location of spatula
+
+Initial States:
+- at-location spatula counterTop
+- inaction robot2
+
+Step 2: Define Goals
+
+Goals:
+- holding robot2 spatula
+
+PDDL Problem File:
+
+```pddl
+(define (problem locate_pickup_spatula_problem)
+  (:domain robot2)
+  (:objects
+    robot2 - robot
+    spatula - object
+    counterTop - object
+  )
+  (:init
+    (at robot2 counterTop)
+    (at-location spatula counterTop)
+    (inaction robot2)
+  )
+  (:goal
+    (and
+      (holding robot2 spatula)
+    )
+  )
+)
+```
+
+Problem file generation is done.

@@ -1,0 +1,42 @@
+To generate the problem file for the given domain and task of moving to the trash can, we need to follow these steps:
+
+Step 1: Identify Objects and Initial State
+
+Objects Involved:
+- Robots: robot2
+- Object: GarbageCan
+- Initial location of GarbageCan
+
+Initial States:
+- at-location GarbageCan Floor
+- inaction robot2
+
+Step 2: Define Goals
+
+Goals:
+- at robot2 GarbageCan
+
+PDDL Problem File:
+
+```pddl
+(define (problem move_to_trash_can_problem)
+  (:domain robot2)
+  (:objects
+    robot2 - robot
+    GarbageCan - object
+    Floor - object
+  )
+  (:init
+    (at robot2 Floor)
+    (at-location GarbageCan Floor)
+    (inaction robot2)
+  )
+  (:goal
+    (and
+      (at robot2 GarbageCan)
+    )
+  )
+)
+```
+
+Problem file generation is done.

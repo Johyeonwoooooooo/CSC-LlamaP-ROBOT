@@ -1,0 +1,4 @@
+(pickupobject robot2 spatula countertop)
+(gotoobject robot2 garbagecan)
+(putobject robot2 spatula garbagecan)
+; cost = 3 (unit cost)
