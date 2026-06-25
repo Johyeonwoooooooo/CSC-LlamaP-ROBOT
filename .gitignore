@@ -1,0 +1,30 @@
+# ===== 비밀키 — 절대 커밋 금지 =====
+**/api_key.txt
+**/api_key
+
+# ===== 가상환경 (너무 큼) =====
+.venv/
+
+# ===== 로컬 Claude 설정 =====
+.claude/
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# ===== Fast Downward (서브모듈) =====
+# 145MB 빌드 바이너리 + 대용량 소스. aibasel/downward@e02b0f8 에서 받아 빌드.
+# (방법은 LaMMA-P/RUN_GUIDE_KR.md / README.md 참고)
+LaMMA-P/downward/
+
+# ===== LaMMA-P 실행 중 생성물 =====
+LaMMA-P/data/aithor_connect/agent_*/
+LaMMA-P/data/aithor_connect/top_view/
+LaMMA-P/data/aithor_connect/*.mp4
+LaMMA-P/plan_to_code_results/
+**/*.bak
+
+# ===== OS =====
+.DS_Store
