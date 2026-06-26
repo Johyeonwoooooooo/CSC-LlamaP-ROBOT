@@ -20,6 +20,8 @@ import difflib  #PG: Added
 
 import sys
 sys.path.append(".")
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # scripts/ 를 import 경로에
+import llm_backends
 
 import resources.actions as actions
 import resources.robots as robots
@@ -633,10 +635,13 @@ class LLMHandler:
                     openai.api_key = api_key
                     print("Successfully loaded API key from", api_key_file)
                 except FileNotFoundError:
-                    raise LLMError(f"API key file not found: {api_key_file} or {api_key_file}.txt")
+                    # 로컬(Ollama) 전용 실행이면 OpenAI 키가 없어도 됨 — 경고만.
+                    openai.api_key = ""
+                    print(f"[경고] API 키 파일 없음({api_key_file}). "
+                          f"gpt 모델 사용 시에만 필요합니다(llama/로컬은 무시).")
         except Exception as e:
             raise LLMError(f"Error reading API key file: {str(e)}")
-    
+
     def query_model(
         self, 
         prompt: Union[str, List[Dict]], 
@@ -666,27 +671,15 @@ class LLMHandler:
         
         for attempt in range(MAX_RETRIES):
             try:
-                if "gpt" not in gpt_version:
-                    response = openai.completions.create(
-                        model=gpt_version, 
-                        prompt=prompt, 
-                        max_tokens=max_tokens, 
-                        temperature=temperature, 
-                        stop=stop, 
-                        logprobs=logprobs, 
-                        frequency_penalty=frequency_penalty
-                    )
-                    return response, response.choices[0].text.strip()
-                else:
-                    response = openai.chat.completions.create(
-                        model=gpt_version, 
-                        messages=prompt, 
-                        max_tokens=max_tokens, 
-                        temperature=temperature, 
-                        frequency_penalty=frequency_penalty
-                    )
-                    return response, response.choices[0].message.content.strip()
-                    
+                # gpt → OpenAI 클라우드, llama 등 → Ollama(로컬). 문자열/메시지 모두 처리.
+                return llm_backends.chat(
+                    prompt, gpt_version,
+                    max_tokens=max_tokens,
+                    temperature=temperature,
+                    frequency_penalty=frequency_penalty,
+                    stop=stop,
+                )
+
             except openai.RateLimitError:
                 if attempt < MAX_RETRIES - 1:
                     time.sleep(retry_delay)
@@ -1971,7 +1964,8 @@ def parse_arguments() -> argparse.Namespace:
         "--gpt-version",
         type=str,
         default="gpt-4o",
-        choices=['gpt-3.5-turbo', 'gpt-4o', 'gpt-3.5-turbo-16k']
+        help="gpt-4o 등 OpenAI 모델, 또는 ollama 태그(예: llama3.1:8b, llama-3.1-8b, llama2:13b). "
+             "이름에 'gpt'가 없으면 자동으로 로컬 Ollama 로 라우팅됨."
     )
     parser.add_argument(
         "--prompt-decompse-set",
