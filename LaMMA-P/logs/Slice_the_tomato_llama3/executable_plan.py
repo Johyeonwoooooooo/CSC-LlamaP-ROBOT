@@ -74,7 +74,7 @@ def _match_obj(query, obj_id):
         return False
     return t == q or t.startswith(q) or q.startswith(t)
 
-c = Controller( height=1000, width=1000)
+c = Controller( height=500, width=500)   # 창/렌더 크기 (1000→500: 화면의 약 1/4 크기로 작게 띄움)
 c.reset("FloorPlan" + str(floor_no)) 
 no_robot = len(robots)
 
@@ -589,29 +589,29 @@ def ThrowObject(robot, sw_obj):
     
     action_queue.append({'action':'ThrowObject', 'objectId':sw_obj_id, 'agent_id':agent_id}) 
     time.sleep(1)
-import threading
-import time
-
-def task_function(robots):
-    # Task description: Slice the tomato
-    GoToObject(robots[0], 'Knife')
-    PickupObject(robots[0], 'Knife')
+def slice_tomato(robots):
+    # Task description
     GoToObject(robots[0], 'Tomato')
     PickupObject(robots[0], 'Tomato')
-    # Assuming SliceObject is a predefined function similar to others.
-    SliceObject(robots[0], 'Tomato')
+    GoToObject(robots[0], 'CounterTop')
+    PutObject(robots[0], 'Tomato', 'CounterTop')
+    SwitchOn(robots[0], 'Knife')
+    time.sleep(2)
+    PickupObject(robots[0], 'Knife')
+    GoToObject(robots[0], 'Tomato')
+    # Replace this placeholder action with the actual AI2-THOR function for slicing
+    PutObject(robots[0], 'Tomato', 'CounterTop')  # This is a placeholder action for slicing. You may need to use a different AI2-THOR function or modify this line based on your actual task requirements
+    SwitchOff(robots[0], 'Knife')
 
 # Threading setup
-robots = [{'name': 'robot1', 'skills': ['GoToObject', 'OpenObject', 'CloseObject', 'BreakObject', 'SliceObject', 'SwitchOn', 'SwitchOff', 'PickupObject', 'PutObject', 'DropHandObject', 'ThrowObject', 'PushObject', 'PullObject'], 'mass': 100}, {'name': 'robot2', 'skills': ['GoToObject', 'OpenObject', 'CloseObject', 'BreakObject', 'SliceObject', 'SwitchOn', 'SwitchOff', 'PickupObject', 'PutObject', 'DropHandObject', 'ThrowObject', 'PushObject', 'PullObject'], 'mass': 100}, {'name': 'robot3', 'skills': ['GoToObject', 'OpenObject', 'CloseObject', 'BreakObject', 'SliceObject', 'SwitchOn', 'SwitchOff', 'PickupObject', 'PutObject', 'DropHandObject', 'ThrowObject', 'PushObject', 'PullObject'], 'mass': 100}]
-task1_thread = threading.Thread(target=task_function, args=(robots,))
-task1_thread.start()
-task1_thread.join()
+task5_thread = threading.Thread(target=slice_tomato, args=(robots,))
+task5_thread.start()
 
 # Action queue and completion
-action_queue = []  # Assuming action_queue is defined elsewhere
-action_queue.append({'action': 'Done'})
+action_queue.append({'action':'Done'})
 task_over = True
 time.sleep(5)
+
 no_trans = 0
 
 for i in range(25):

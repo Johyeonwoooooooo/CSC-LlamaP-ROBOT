@@ -14,6 +14,7 @@ def task_function(robots):
     # Action 3: Robot 0 moves to the sink.
     GoToObject(robots[0], 'Sink')
     # Action 4: Robot 0 washes the lettuce.
+    # This involves putting the lettuce in the sink, turning on the faucet, waiting, and turning off the faucet.
     PutObject(robots[0], 'Lettuce', 'Sink')
     SwitchOn(robots[0], 'Faucet')
     time.sleep(5)  # Wait for a while to let the Lettuce wash.
@@ -27,7 +28,7 @@ def task_function(robots):
     PutObject(robots[0], 'Lettuce', 'CounterTop')
 
 # Threading setup
-robots = [None]  # Assuming robots list is initialized elsewhere with robot instances
+robots = [None]  # Assuming robots list is initialized elsewhere with actual robot objects
 task1_thread = threading.Thread(target=task_function, args=(robots,))
 task1_thread.start()
 task1_thread.join()

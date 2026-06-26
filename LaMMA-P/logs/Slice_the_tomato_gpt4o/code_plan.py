@@ -3,11 +3,22 @@ import time
 
 def task_function(robots):
     # Task description: Slice the tomato
+
+    # 0: Task: Go to the Knife
+    # 1: Go to the Knife.
     GoToObject(robots[0], 'Knife')
+    
+    # 2: Pick up the Knife.
     PickupObject(robots[0], 'Knife')
+    
+    # 3: Go to the Tomato.
     GoToObject(robots[0], 'Tomato')
+    
+    # 4: Pick up the Tomato.
     PickupObject(robots[0], 'Tomato')
-    # Assuming SliceObject is a predefined function similar to others.
+    
+    # 5: Slice the Tomato.
+    # Note: Assuming SliceObject is a predefined function similar to others
     SliceObject(robots[0], 'Tomato')
 
 # Threading setup
