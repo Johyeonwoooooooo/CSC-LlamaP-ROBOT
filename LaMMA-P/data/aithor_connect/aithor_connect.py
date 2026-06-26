@@ -21,7 +21,7 @@ def _match_obj(query, obj_id):
         return False
     return t == q or t.startswith(q) or q.startswith(t)
 
-c = Controller( height=1000, width=1000)
+c = Controller( height=500, width=500)   # 창/렌더 크기 (1000→500: 화면의 약 1/4 크기로 작게 띄움)
 c.reset("FloorPlan" + str(floor_no)) 
 no_robot = len(robots)
 
